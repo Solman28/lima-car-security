@@ -17,8 +17,6 @@ class Placa
 		$evalModel = $this->CI->Service_model->getDataVehicle($placa);
 		if ($evalModel) {
 			return $evalModel;
-		} else {
-			return array();
 		}
 		$this->_guid = "DIREC-DE-VEHIC-2013";
 		$response = file_get_contents($this->_url.$this->_guid."?auth_key=".$this->_key."&output=json_array&filter0=column0[contains]".$placa);
@@ -30,8 +28,6 @@ class Placa
 		$evalModel = $this->CI->Service_model->getVehiclesInfraction($placa);
 		if ($evalModel) {
 			return $evalModel;
-		} else {
-			return array();
 		}
 		$this->_guid = "DIREC-DE-SANCI-2007-2010";
 		$response = file_get_contents($this->_url.$this->_guid."?auth_key=".$this->_key."&output=json_array&filter0=column0[contains]".$placa);
